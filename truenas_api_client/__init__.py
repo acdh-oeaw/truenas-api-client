@@ -1022,7 +1022,7 @@ def main():
 
     if args.name == 'call':
         try:
-            with Client(uri=args.uri) as c:
+            with Client(uri=args.uri, verify_ssl=False) as c:
                 try:
                     if args.username and args.password:
                         if not c.call('auth.login', args.username, args.password):
